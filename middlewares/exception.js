@@ -1,7 +1,7 @@
 const { HttpException } = require('../core/http-exception')
 
 // 全局异常捕获
-const catchError = async (ctx, next) => {
+const errorHandler = async (ctx, next) => {
     try {
         await next()
     } catch (error) {
@@ -27,4 +27,4 @@ const catchError = async (ctx, next) => {
         }
     }
 }
-module.exports = catchError
+module.exports = errorHandler

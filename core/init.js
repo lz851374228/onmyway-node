@@ -11,7 +11,7 @@ class InitManager {
     }
     // 初始化配置
     static loadConfig(path = '') {
-        const configPath = path || process.cwd() + '/config/config.js'
+        const configPath = path || process.cwd() + '/config.js'
         const config = require(configPath)
         global.config = config
     }

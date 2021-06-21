@@ -1,10 +1,35 @@
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser')
+const cors = require('koa2-cors')
+const staticCache = require('koa-static-cache')
+const helmet = require("koa-helmet")
+
+const config = require('./config')
+const { corsHandler } = require('./middlewares/cors')
+const { loggerMiddleware } = require('./middlewares/logger')
+const errorHandler = require('./middlewares/exception')
 const InitManager = require('./core/init')
-const catchError=require('./middlewares/exception')
 
 const app = new Koa();
-app.use(catchError)//全局异常捕获
-app.use(bodyParser())//请求头参数获取
-InitManager.initCore(app)// 初始化管理器
+// Logger handler
+app.use(loggerMiddleware)
+
+// Error handler
+app.use(errorHandler)
+
+// Post request handler
+app.use(bodyParser())
+
+// Helmet
+app.use(helmet())
+
+// Cors handler
+app.use(cors(corsHandler))
+
+// Static Cache handler
+app.use(staticCache(config.publicDir))
+
+// Init Manager
+InitManager.initCore(app)
+
 app.listen(3000);

@@ -39,9 +39,8 @@ User.init({
         primaryKey: true,
         autoIncrement: true
     },
-    nickname: Sequelize.STRING,
-    email: {
-        type: Sequelize.STRING(128),
+    account_number: {
+        type: Sequelize.STRING(20),
         unique: true
     },
     password: {
@@ -52,10 +51,10 @@ User.init({
             this.setDataValue('password', psw)
         }
     },
-    openid: {
-        type: Sequelize.STRING(64),
+    phone_number: {
+        type: Sequelize.INTEGER(11),
         unique: true
-    }
+    },
 }, {
     sequelize,
     tableName: 'user'

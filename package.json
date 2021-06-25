@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/lz851374228/catering_koa#readme",
   "dependencies": {
+    "@alicloud/pop-core": "^1.7.10",
+    "@alicloud/sms-sdk": "^1.1.6",
     "axios": "^0.21.1",
     "basic-auth": "^2.0.1",
     "bcryptjs": "^2.4.3",

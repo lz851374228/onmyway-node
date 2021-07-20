@@ -1,7 +1,4 @@
 const jwt = require('jsonwebtoken')
-/***
- * 
- */
 const findMembers = function (instance, {
     prefix,
     specifiedType,
@@ -18,10 +15,8 @@ const findMembers = function (instance, {
             // 过滤掉不满足条件的属性或方法名
             return _shouldKeep(name)
         })
-
         return [...names, ..._find(instance.__proto__)]
     }
-
     function _shouldKeep(value) {
         if (filter) {
             if (filter(value)) {
@@ -35,10 +30,8 @@ const findMembers = function (instance, {
             if (instance[value] instanceof specifiedType)
                 return true
     }
-
     return _find(instance)
 }
-
 
 //生成令牌
 const generateToken = function (uid, scope) {
@@ -52,7 +45,6 @@ const generateToken = function (uid, scope) {
     })
     return token
 }
-
 module.exports = {
     findMembers,
     generateToken,

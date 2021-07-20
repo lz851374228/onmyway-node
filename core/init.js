@@ -1,15 +1,15 @@
-const requireDirectory = require('require-directory')
-const Router = require('koa-router');
-
+const requireDirectory = require('require-directory')//实现路由自动加载
+const Router = require('koa-router');//路由中间件
 class InitManager {
     // 入口文件
     static initCore(app) {
         InitManager.app = app
+        InitManager.loadConfig()
         InitManager.initLoadRouters()
         InitManager.loadHttpException()
-        InitManager.loadConfig()
+        
     }
-    // 初始化配置
+    // 初始化配置加载至全局global
     static loadConfig(path = '') {
         const configPath = path || process.cwd() + '/config.js'
         const config = require(configPath)
@@ -27,7 +27,7 @@ class InitManager {
             }
         }
     }
-    // 初始化全局异常处理类
+    // 初始化接口请求异常处理类加载至全局
     static loadHttpException() {
         const errors = require('./http-exception')
         global.errs = errors

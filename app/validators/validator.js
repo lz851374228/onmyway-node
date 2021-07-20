@@ -1,5 +1,5 @@
-const { LinValidator, Rule } = require("../../core/lin-validator-v2");
-const { User } = require('../models/user')
+const { LinValidator, Rule } = require("../../core/lin-validator-v2");//自定义校验器lin-validator-v2
+const { User } = require('../models/user')//用户模型
 const { LoginType, ArtType } = require('../lib/enum')
 
 // 注册接口校验器

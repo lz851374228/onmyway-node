@@ -18,8 +18,6 @@ class ParameterException extends HttpException {
         this.errorCode = errorCode || 20001
     }
 }
-
-
 /**
  * 响应处理结果返回
  * */ 

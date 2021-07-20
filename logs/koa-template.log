@@ -1,3 +1,3 @@
-[2021-06-24T12:29:13.786] [INFO] [Default] - POST 400 /common/user/register 请求参数： {"accountNumber":"lz123456","password":"lz12533","passwordRepeat":"lz12533","phoneNumber":"133312940980"} 响应参数： {"msg":["phoneNumber手机号码不符合规范","账号:lz123456已存在，请重新输入！"],"code":20001,"request":"POST /common/user/register"} - ::1 - 112ms
-[2021-06-24T12:29:21.938] [INFO] [Default] - POST 400 /common/user/register 请求参数： {"accountNumber":"lz123456","password":"lz12533","passwordRepeat":"lz12533","phoneNumber":"13312940980"} 响应参数： {"msg":["账号:lz123456已存在，请重新输入！"],"code":20001,"request":"POST /common/user/register"} - ::1 - 8ms
-[2021-06-24T12:29:37.499] [INFO] [Default] - POST 200 /common/user/register 请求参数： {"accountNumber":"lz123456","password":"lz12533","passwordRepeat":"lz12533","phoneNumber":"13312940980"} 响应参数： {"msg":"ok","code":20000,"request":"POST /common/user/register"} - ::1 - 8ms
+[2021-07-20T12:13:18.559] [INFO] [Default] - GET 404 / 请求参数： {} 响应参数： undefined - ::1 - 5ms
+[2021-07-20T12:13:18.602] [INFO] [Default] - GET 404 /favicon.ico 请求参数： {} 响应参数： undefined - ::1 - 2ms
+[2021-07-20T12:13:45.939] [INFO] [Default] - GET 404 /apidoc 请求参数： {} 响应参数： undefined - ::1 - 1ms

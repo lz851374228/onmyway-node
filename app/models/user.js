@@ -3,16 +3,16 @@ const { Sequelize, Model } = require('sequelize')
 const { sequelize } = require('../../core/db')
 
 class User extends Model {
-    static async verifyEmailPassword(email, plainPassword) {
+    static async verifyAccountPassword(account, password) {
         const user = await User.findOne({
             where: {
-                email
+                account
             }
         })
         if (!user) {
             throw new global.errs.NotFound('账号不存在')
         }
-        const correct = bcrypt.compareSync(plainPassword, user.password)
+        const correct = bcrypt.compareSync(password, user.password)
         if (!correct) {
             throw new global.errs.AuthFailed('密码不正确')
         }
@@ -39,7 +39,7 @@ User.init({
         primaryKey: true,
         autoIncrement: true
     },
-    account_number: {
+    account: {
         type: Sequelize.STRING(20),
         unique: true
     },
@@ -52,7 +52,11 @@ User.init({
         }
     },
     phone_number: {
-        type: Sequelize.INTEGER(11),
+        type: Sequelize.STRING(11),
+        unique: true
+    },
+    nickname: {
+        type: Sequelize.STRING(7),
         unique: true
     },
 }, {

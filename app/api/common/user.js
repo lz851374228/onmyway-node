@@ -65,7 +65,7 @@ router.post('/register', async (ctx, next) => {
  * }
  */
 router.post('/login', async (ctx, next) => {
-    const v = await new LoginValidator().validate()
+    const v = await new LoginValidator().validate(ctx)
     const user = await User.verifyAccountPassword(v.get('body.account'), v.get('body.password'))
     const token = await generateToken(user.id, Auth.USER)
     throw new global.errs.Success({token})

@@ -1,5 +1,5 @@
 class HttpException extends Error {
-    constructor(data = null, msg = '系统错误', errorCode = 50000, code = 400) {
+    constructor(data = null, msg = '系统错误', errorCode = 50000, code = 500) {
         super()
         this.data = data
         this.errorCode = errorCode

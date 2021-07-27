@@ -12,6 +12,7 @@ const errorHandler = async (ctx, next) => {
         }
         if (error instanceof HttpException) {
             ctx.body = {
+                data: error.data,
                 msg: error.msg,
                 code: error.errorCode,
                 request: `${ctx.method} ${ctx.path}`
@@ -20,7 +21,7 @@ const errorHandler = async (ctx, next) => {
         } else {
             ctx.body = {
                 msg: 'we made a mistake !!!∑(ﾟДﾟノ)ノ',
-                code: 999,
+                code: 500,
                 request: `${ctx.method} ${ctx.path}`
             }
             ctx.status = 500

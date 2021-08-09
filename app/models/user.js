@@ -39,26 +39,21 @@ User.init({
         primaryKey: true,
         autoIncrement: true
     },
-    account: {
-        type: Sequelize.STRING(20),
+    nickname: {
+        type: Sequelize.STRING(7),
         unique: true
-    },
-    password: {
-        type: Sequelize.STRING,
-        set(val) {
-            const salt = bcrypt.genSaltSync(10)
-            const psw = bcrypt.hashSync(val, salt)
-            this.setDataValue('password', psw)
-        }
     },
     phone_number: {
         type: Sequelize.STRING(11),
         unique: true
     },
-    nickname: {
-        type: Sequelize.STRING(7),
-        unique: true
+    head_portrait: {
+        type: Sequelize.STRING(255),
     },
+    coupons_bean: {
+        type:Sequelize.INTEGER(19)
+    }
+
 }, {
     sequelize,
     tableName: 'user'

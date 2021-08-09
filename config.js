@@ -1,7 +1,7 @@
 /*
  * @Author: Zheng Li
  * @Date: 2021-06-20 10:04:49
- * @LastEditTime: 2021-07-20 15:18:13
+ * @LastEditTime: 2021-07-29 13:59:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \catering_koa\config\config.js
@@ -15,7 +15,7 @@ module.exports = {
     publicDir: path.resolve(__dirname, './public'),
     logPath: path.resolve(__dirname, './logs/koa-template.log'),
     database: {
-        dbName: 'onmyway',
+        dbName: 'coupons_insider',
         host: 'localhost',
         port: 3306,
         user: 'root',
